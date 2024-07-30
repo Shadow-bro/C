@@ -1,6 +1,6 @@
 1. Write a program to find GCD using recursion ?
 
-#include<stdio.h> 
+#include stdio.h
 
 #include<conio.h> 
 
@@ -203,9 +203,7 @@ return(fib(n-1)+fib(n-2));
 
 
 
-5. Write a program to find largest and smallest element in the given 
-
-array elements.
+5. Write a program to find largest and smallest element in the given array elements.
 
 #include<stdio.h> 
 
