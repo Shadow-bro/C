@@ -2,7 +2,7 @@
 
 #include stdio.h
 
-#include<conio.h> 
+#include conio.h
 
 int gcd(int a,int b); 
 
@@ -46,11 +46,11 @@ return(gcd(a,b-a));
 
 
 
-2. Write a program to find Binomial Coefficient Using Recursion
+2  Write a program to find Binomial Coefficient Using Recursion
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h> 
+#include conio.h
 
 int fact(int n);
 
@@ -89,11 +89,11 @@ return(n*fact(n-1));
 }
 
 
-3. Write a program illustrate tower of Hanoi program for N-disk?
+3  Write a program illustrate tower of Hanoi program for N-disk?
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void tower(int n, char A,char B,char C); 
 
@@ -147,11 +147,11 @@ tower(n-1,B,A,C);
 }
 
 
-4. Write a program to find Fibonacci numbers Using Recursion?
+4  Write a program to find Fibonacci numbers Using Recursion?
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h> 
+#include conio.h 
 
 int fib(int n);
 
@@ -203,11 +203,11 @@ return(fib(n-1)+fib(n-2));
 
 
 
-5. Write a program to find largest and smallest element in the given array elements.
+5  Write a program to find largest and smallest element in the given array elements.
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h> 
+#include conio.h
 
 void main()
 
@@ -262,11 +262,11 @@ getch();
 
 
 
-6. Write a program to search the given key element using linear search .
+6  Write a program to search the given key element using linear search .
 
-#include<stdio.h> 
+#include stdio.h 
 
-#include<conio.h>
+#include conio.h
 
 intlsearch(int a[],int n,int key); 
 
@@ -328,9 +328,9 @@ return(-1);
 
 7. Write a program to search a given key element using binary search.
 
-#include<stdio.h> 
+#include stdio.h  
 
-#include<conio.h>
+#include conio.h
 
 int bsearch(int a[],int n,int key); 
 
@@ -407,11 +407,11 @@ return(-1);
 
 
 
-8. Write a program to sort given elements using bubble sort
+8  Write a program to sort given elements using bubble sort
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void bubblesort(int a[],int n); 
 
@@ -484,11 +484,11 @@ a[j+1]=temp;
 }
 
 
-9. Write a program to sort the given n- elements using insertion sort.
+9  Write a program to sort the given n- elements using insertion sort.
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void insertionsort(int a[],int n); 
 
@@ -568,11 +568,11 @@ a[j
 
 
 
-10. Write a program to sort the given n-elements using selection sort
+10  Write a program to sort the given n-elements using selection sort
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void selectionsort(int a[],int n); 
 
@@ -651,11 +651,11 @@ a[pos]=temp;
 
 
 
-11. Write a program to sort the given array elements using Merge sort
+11n Write a program to sort the given array elements using Merge sort
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void mergesort(int a[],int low,int high); 
 
@@ -781,11 +781,11 @@ a[i]=c[i]; }
 
 
 
-12. Write a program to sort the given n-elements using Quick sort.
+12  Write a program to sort the given n-elements using Quick sort.
 
-#include<stdio.h> 
+#include stdio.h
 
-#include<conio.h>
+#include conio.h
 
 void quicksort(int a[],intlow,int high); 
 
@@ -880,13 +880,13 @@ quicksort(a,j+1,high); }
 }
 
 
-13. Write a program to implement Stacks Operations. 
+13  Write a program to implement Stacks Operations. 
 
-#include<stdio.h>
+#include stdio.h
 
-#include<conio.h> 
+#include conio.h
 
-#include<process.h> 
+#include process.h 
 
 #define max 5
 
@@ -1032,13 +1032,13 @@ printf(" %d",stack[i]);
 }
 
 
-14. Write a program to convert Infix expression to Postfix Notation. 
+14  Write a program to convert Infix expression to Postfix Notation. 
 
-#include <stdio.h>
+#include  stdio.h
 
-#include <conio.h> 
+#include  conio.h
 
-#include <ctype.h>
+#include ctype.h
 
 char stack[20]; 
 
@@ -1149,13 +1149,13 @@ return(c);
 
 }
 
-15. Write a program to implement Queue Operations. 
+15  Write a program to implement Queue Operations. 
 
-#include <stdio.h>
+#include stdio.h
 
-#include<conio.h> 
+#include conio.h
 
-#include<process.h> 
+#include process.h 
 
 #define max 5
 
@@ -1328,17 +1328,17 @@ printf(" rear");
 
 
 
-16. Write a program to Create & Display Singly Linked List and Perform 
+16  Write a program to Create & Display Singly Linked List and Perform 
 
 Insertion and Deletion Operations.
 
-#include<stdio.h> 
+#include stdio.h 
 
-#include<conio.h> 
+#include conio.h
 
-#include<alloc.h> 
+#include alloc.h
 
-#include<process.h>
+#include process.h
 
 struct node
 
@@ -1741,13 +1741,13 @@ printf("\n key node not found");
 
 traversal technique.
 
-#include<stdio.h> 
+#include stdio.h 
 
-#include<conio.h> 
+#include conio.h 
 
-#include<process.h> 
+#include process.h
 
-#include<alloc.h>
+#include alloc.h
 
 struct node
 
@@ -1938,15 +1938,13 @@ printf("%d\n",temp->info);
 
 }
 
-18. Write a program to accept cities name and display it in alphabetical 
+18  Write a program to accept cities name and display it in alphabetical order.
 
-order.
+#include stdio.h
 
-#include<stdio.h> 
+#include conio.h 
 
-#include<conio.h> 
-
-#include<string.h> 
+#include string.h
 
 void main()
 
