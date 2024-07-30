@@ -1,0 +1,2010 @@
+1. Write a program to find GCD using recursion ?
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+int gcd(int a,int b); 
+
+void main()
+
+{
+
+int a,b, ans; 
+
+clrscr();
+
+printf("\n enter two numbers:"); 
+
+scanf("%d %d",&a,&b);
+
+ans=gcd(a,b);
+
+printf("\n GCD=%d", ans); 
+
+getch();
+
+}
+
+int gcd(int a,int b)
+
+{
+
+if(a==b) return(a);
+
+else 
+
+if(a>b)
+
+return(gcd(a-b,b)); 
+
+else
+
+return(gcd(a,b-a));
+
+}
+
+
+
+2. Write a program to find Binomial Coefficient Using Recursion
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+int fact(int n);
+
+void main()
+
+{
+
+int n,r,ans; 
+
+clrscr();
+
+printf("\n enter n and r values:"); 
+
+scanf("%d %d",&n ,&r);
+
+ans=fact(n)/(fact(r)*fact(n-r));
+
+printf("\n binomial coefficient %d C %d= %d",n ,r, ans); 
+
+getch();
+
+}
+
+int fact(int n)
+
+{
+
+if(n==0)
+
+return (1); 
+
+else
+
+return(n*fact(n-1));
+
+}
+
+
+3. Write a program illustrate tower of Hanoi program for N-disk?
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void tower(int n, char A,char B,char C); 
+
+int count =0;
+
+void main()
+
+{
+
+int n; 
+
+clrscr();
+
+printf("\n enter number of Disks :"); 
+
+scanf("%d", &n);
+
+tower(n, 'A' ,'B','C');
+
+printf("\n number of moves=%d", count); 
+
+getch();
+
+}
+
+void tower( int n, char A, char B, char C)
+
+{
+
+if(n==1)
+
+{
+
+printf("move disk from %c -> %c\n ", A , C); 
+
+count++;
+
+}
+
+else
+
+{
+tower(n-1,A,C,B);
+
+tower(1,A,B,C);
+
+tower(n-1,B,A,C);
+
+}
+
+}
+
+
+4. Write a program to find Fibonacci numbers Using Recursion?
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+int fib(int n);
+
+void main()
+
+{
+
+int i,n; 
+
+clrscr();
+
+printf("\n enter the number of elements:"); 
+
+scanf("%d",&n);
+
+printf("\n fibonacci series are: "); 
+
+for(i=1;i<=n;i++)
+
+{
+
+printf("%d ",fib(i));
+
+}
+
+getch();
+
+}
+
+int fib(int n)
+
+{
+
+if(n==0) 
+
+return(0);
+
+else 
+
+if(n==1)
+
+return(1); 
+
+else
+
+return(fib(n-1)+fib(n-2));
+
+
+
+
+
+5. Write a program to find largest and smallest element in the given 
+
+array elements.
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+void main()
+
+{
+
+int a[10],n ,i,small ,large; 
+
+clrscr();
+
+printf("\n enter number of elements:"); 
+
+scanf("%d", &n);
+
+printf("\n enter array elements:"); 
+
+for(i=0;i<n ; i++) 
+
+scanf("%d",&a[i]);
+
+large=a[0]; 
+
+small=a[0];
+
+for(i=1;i<n; i++)
+
+{
+
+if (a[ i ]>large) 
+
+large =a[ i ];
+
+else
+
+{
+
+if(a[i]<small) 
+
+small=a[i];
+
+}
+
+}
+
+printf("\n largest element=%d\n ", large); 
+
+printf("\n smallest element = %d",small); 
+
+getch();
+
+}
+
+
+
+
+6. Write a program to search the given key element using linear search .
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+intlsearch(int a[],int n,int key); 
+
+void main()
+
+{
+
+int a[10],n,i,key,loc; 
+
+clrscr();
+
+printf("\n enter number of elements:"); 
+
+scanf("%d",&n);
+
+printf("\n enter array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d",&a[i]);
+
+printf("\n enter key elementto search:"); 
+
+scanf("%d",&key);
+
+loc=lsearch(a,n,key);
+
+if(loc==-1)
+
+printf("\n key element not found");
+else
+
+}
+
+printf("\n key elementfound atlocation=%d", loc); 
+
+getch();
+
+int lsearch(int a[],int n,int key)
+
+{
+
+int i; 
+
+for(i=0;i<n;i++)
+
+{
+
+if(key==a[i]) 
+
+return(i+1);
+
+}
+
+return(-1);
+
+}
+
+
+7. Write a program to search a given key element using binary search.
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+int bsearch(int a[],int n,int key); 
+
+void main()
+
+{
+
+int a[10],n,i,key,loc; 
+
+clrscr();
+
+printf("\n enter number of elements:"); 
+
+scanf("%d",&n);
+
+printf("\n enter array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d",&a[i]);
+
+printf("\n enter key elementto search:"); 
+
+scanf("%d",&key);
+
+loc=bsearch(a,n,key);
+
+if(loc==-1)
+
+printf("\n key element not found");
+
+else
+
+printf("\n key element found at location=%d", loc);
+
+getch();
+
+}
+int bsearch (int a[], int n ,int key)
+
+{
+
+int low, high, mid; 
+
+low =0;
+
+high =n-1;
+
+while (low<=high)
+
+{
+
+mid=(low+high)/2;
+
+if(key ==a[mid])
+
+return(mid+1);
+
+else
+
+if(key<a[mid])
+
+high=mid-1;
+
+else
+
+low=mid+1;
+
+}
+
+return(-1);
+
+}
+
+
+
+8. Write a program to sort given elements using bubble sort
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void bubblesort(int a[],int n); 
+
+void main()
+
+{
+
+int a[10],n,i; 
+
+clrscr();
+
+printf("\n enter number of elements:"); 
+
+scanf("%d",&n);
+
+printf("\n enter array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d",&a[i]);
+
+printf("\n before sorting:"); 
+
+for(i=0;i<n;i++) 
+
+printf("\n%d",a[i]);
+
+bubblesort(a,n);
+
+printf("\n after bubble sort:"); 
+
+for(i=0;i<n;i++) 
+
+printf("\n%d",a[i]);
+
+getch();
+
+}
+
+void bubblesort(int a[],int n)
+
+{
+
+int i,j,temp; 
+
+for(i=1;i<n;i++)
+
+{
+
+for(j=0;j<n-i;j++)
+
+{
+
+if(a[j]>a[j+1])
+
+{
+
+temp =a[j]; 
+
+a[j]=a[j+1]; 
+
+a[j+1]=temp;
+
+}
+
+}
+
+}
+
+}
+
+
+9. Write a program to sort the given n- elements using insertion sort.
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void insertionsort(int a[],int n); 
+
+void main()
+
+{
+
+int a[10],i,n; 
+
+clrscr();
+
+printf("\n enter number of elements:\n"); 
+
+scanf("\n%d",&n);
+
+printf("\n enter array elements:\n"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d",&a[i]); 
+
+printf("\n before sorting:"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %d",a[i]); 
+
+insertionsort(a,n);
+
+printf("\n after sorting insertion :"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %d",a[i]); 
+
+getch();
+
+}
+
+void insertionsort(int a[],int n)
+
+{
+
+int i,j,temp;
+
+for(i=1;i<n;i++) {
+
+for(j=i;j>0;j--
+
+)
+
+{
+
+if(a[j]<a[j
+
+-1])
+
+{
+
+temp=a[j]; 
+
+a[j]=a[j
+
+-1]; 
+
+a[j
+
+-1]=temp;
+
+}
+
+}
+
+}
+
+}
+
+
+
+10. Write a program to sort the given n-elements using selection sort
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void selectionsort(int a[],int n); 
+
+void main()
+
+{
+
+int a[10],i,n; 
+
+clrscr();
+
+printf("\nEnter the no. of elements:"); 
+
+scanf("%d", &n);
+
+printf("\nEnter the array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d", &a[i]); 
+
+selectionsort(a, n); 
+
+printf("\nAfter sorting :\n"); 
+
+for(i=0;i<n;i++)
+
+printf("\n%d", a[i]); 
+
+getch();
+
+}
+
+void selectionsort(int a[], int n)
+
+{
+
+inti,j,temp, small, pos; 
+
+for(i=1;i<n;i++)
+
+{
+
+small=a[i-1];
+
+pos=i
+
+-1; 
+
+for(j=i;j<n;j++) {
+
+if(a[j]<small) {
+
+small= a[j]; 
+
+pos=j;
+
+}
+
+}
+
+temp=a[i
+
+-1]; 
+
+a[i
+
+-1]=a[pos]; 
+
+a[pos]=temp;
+
+}
+
+}
+
+
+
+
+11. Write a program to sort the given array elements using Merge sort
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void mergesort(int a[],int low,int high); 
+
+void merge(int a[],intlow,int mid,int high); 
+
+void main()
+
+{
+
+int a[10],n,i; 
+
+clrscr();
+
+printf("\n Enter number of array elements:"); 
+
+scanf("%d", &n);
+
+printf("\n Enter array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("\n %d",&a[i]); 
+
+printf("\n \nBefore sorting:"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %d",a[i]);
+
+mergesort(a,0,n-1); 
+
+printf("\n\nAfter sorting:"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %d",a[i]); 
+
+getch();
+
+}
+
+void mergesort(int a[],int low,int high)
+
+{
+
+int mid; 
+
+if(low<high)
+
+{
+
+mid=(low+high)/2; 
+
+mergesort(a,low,mid); 
+
+mergesort(a,mid+1,high); 
+
+merge(a,low,mid,high);
+
+}
+
+}
+
+void merge(int a[],int low,int mid,int high)
+
+{
+
+inti,j,k,c[10]; 
+
+i=low; 
+
+j=mid+1; 
+
+k=low;
+
+while((i<=mid)&&(j<=high))
+
+{
+
+if(a[i]<a[j])
+
+{
+
+c[k]=a[i]; 
+
+i++;
+
+k++;
+
+}
+
+else
+{
+c[k]=a[j]; 
+
+j++;
+
+k++;
+}}
+while(i<=mid) {
+
+c[k]=a[i]; 
+
+i++;
+
+k++;
+
+}
+
+while(j<=high) {
+
+c[k]=a[j]; 
+
+j++;
+
+k++;
+
+}
+
+for(i=low;i<k;i++) 
+
+a[i]=c[i]; }
+
+
+
+12. Write a program to sort the given n-elements using Quick sort.
+
+#include<stdio.h> 
+
+#include<conio.h>
+
+void quicksort(int a[],intlow,int high); 
+
+void main()
+
+{
+
+int a[10],n,i; 
+
+clrscr();
+
+printf("\n Enter number of elements:"); 
+
+scanf("%d",&n);
+
+printf("\n Enter array elements:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%d",&a[i]);
+
+printf("\nBefore quicksort: \n"); 
+
+for(i=0;i<n;i++)
+
+printf(" %d\n ",a[i]);
+
+quicksort(a,0,n-1);
+
+printf("\nAfter quicksort: \n"); 
+
+for(i=0;i<n;i++)
+
+printf("%d\n ",a[i]); 
+
+getch();
+
+}
+
+void quicksort(int a[],int low,int high)
+
+{
+
+inti,j,piv,temp; 
+
+i=low+1; 
+
+j=high; 
+
+piv=a[low]; 
+
+if(low<high)
+
+{
+
+while(low<high) {
+
+while((a[i]<piv)&&(i<high)) 
+
+i++;
+
+while((a[j]>piv)&&(j>low)) j--;
+
+if(i<j) {
+
+temp=a[i]; 
+
+a[i]=a[j]; 
+
+a[j]=temp;
+
+}
+
+else {
+
+temp=a[low]; 
+
+a[low]=a[j]; 
+
+a[j]=piv; 
+
+break;
+
+}
+
+}
+
+quicksort(a,low,j-1); 
+
+quicksort(a,j+1,high); }
+
+}
+
+
+13. Write a program to implement Stacks Operations. 
+
+#include<stdio.h>
+
+#include<conio.h> 
+
+#include<process.h> 
+
+#define max 5
+
+int top=-1; 
+
+int stack[5]; 
+
+void Push(); 
+
+void Pop();
+
+void display();
+
+int main()
+
+{
+
+int ch; 
+
+clrscr(); 
+
+while(1)
+
+{
+
+printf("\n\n 1. PUSH");
+
+printf("\n 2. POP");
+
+printf("\n 3. DISPLAY");
+
+printf("\n 4. EXIT"); 
+
+printf("\n\nEnter the choice:");
+
+scanf("%d",&ch); 
+
+switch(ch)
+
+{
+
+case 1: Push(); 
+
+break;
+
+case 2: Pop(); 
+
+break;
+
+case 3: display(); 
+
+break;
+
+case 4: exit(0);
+
+default: printf("\nInvalid choice!!");
+
+}
+
+}
+
+}
+
+void Push()
+
+{
+
+int ele; 
+
+if(top==max-1)
+
+{
+
+printf("\nStack is Overflow!!");
+
+}
+
+else
+
+{
+
+printf("\nEnter elementto push:"); 
+
+scanf("%d",&ele);
+
+top++; 
+
+stack[top]=ele;
+
+}
+
+}
+
+void Pop()
+
+{
+
+if(top==-1)
+
+{
+
+printf("\nStack is Underflow!!");
+
+}
+
+else
+
+{
+
+printf("\nPopped element: %d",stack[top]); 
+
+top--;
+
+}
+
+}
+void display()
+
+{
+
+int i; 
+
+if(top==-1)
+
+{
+
+printf("\nStack is Underflow!!");
+
+}
+
+else
+
+{
+
+printf("\n Top-> ");
+
+for(i=top;i>=0;i--)
+
+printf(" %d",stack[i]);
+
+}
+
+}
+
+
+14. Write a program to convert Infix expression to Postfix Notation. 
+
+#include <stdio.h>
+
+#include <conio.h> 
+
+#include <ctype.h>
+
+char stack[20]; 
+
+int top=-1; 
+
+char pop();
+
+void push(char); 
+
+int pre(char c) ;
+
+void main()
+
+{
+
+char infix[20],postfix[20]; 
+
+int i=0,j=0;
+
+char ch; 
+
+clrscr();
+
+printf("\n enter infix expression(At end #):"); 
+
+scanf("%s",&infix);
+
+push('#');
+
+while((ch=infix[i++])!='#')
+
+{
+
+if(isalnum(ch)) 
+
+postfix[j++]=ch; 
+
+else
+
+{
+
+while(pre(stack[top])>=pre(ch)) 
+
+postfix[j++]=pop();
+
+push(ch);
+
+}
+
+}
+
+while(stack[top]!='#') 
+
+postfix[j++]=pop(); 
+
+postfix[j]='\0';
+
+printf("\n postfix notation = %s ",postfix); 
+
+getch();
+
+}
+
+int pre(char c)
+
+{
+
+switch (c)
+
+{
+case '+':
+
+case '-': return (1); 
+
+case '*':
+
+case '/': return (2);
+
+case '^': return (3);
+
+case '#': return (0);
+
+}
+
+}
+
+void push(char c)
+
+{
+
+top++; 
+
+stack[top]=c;
+
+}
+
+char pop()
+
+{
+
+char c; 
+
+c=stack[top]; 
+
+top--; 
+
+return(c);
+
+}
+
+15. Write a program to implement Queue Operations. 
+
+#include <stdio.h>
+
+#include<conio.h> 
+
+#include<process.h> 
+
+#define max 5
+
+int queue[5];
+
+void Qinsert(); 
+
+void Qdelete(); 
+
+void Qdisplay(); 
+
+int rear = - 1;
+
+int front = - 1;
+
+int main()
+
+{
+
+int ch; 
+
+clrscr(); 
+
+while (1)
+
+{
+
+printf("\n\n 1.Insert\n "); 
+
+printf("2.Delete\n "); 
+
+printf("3.Display\n ");
+
+printf("4.Exit\n ");
+
+printf("\n Enter your choice : "); 
+
+scanf("%d", &ch);
+
+switch(ch)
+
+{
+
+case 1:
+
+Qinsert(); 
+
+break;
+
+case 2: 
+
+Qdelete(); 
+
+break;
+
+case 3: 
+
+Qdisplay(); 
+
+break;
+
+case 4:
+
+exit(0); 
+
+default:
+
+printf("\nInvalid choice ");
+
+}
+
+}
+
+}
+void Qinsert()
+
+{
+
+int ele;
+
+if(rear == max - 1) 
+
+printf("\nQueue is FULL "); 
+
+else
+
+{
+
+printf("\n Enter the element to insert : "); 
+
+scanf("%d", &ele);
+
+if(rear== - 1)
+
+{
+
+front = 0;
+
+rear = 0;
+
+}
+
+else
+
+rear++; 
+
+queue[rear] = ele;
+
+}
+
+}
+void Qdelete()
+
+{
+
+if(front == -1)
+
+printf("\nQueue is Empty\n"); 
+
+else
+
+{
+
+printf("\n Element deleted from queue is : %d", queue[front]); 
+
+if(front==rear)
+
+{
+
+front=-1; 
+
+rear=-1;
+
+}
+
+else
+
+front++;
+
+}
+
+}
+
+void Qdisplay()
+
+{
+
+int i;
+
+if(front == - 1)
+
+printf("\n Queue is empty\n ");
+else
+
+{
+
+printf("\nQueue is : "); 
+
+printf(" front->");
+
+for(i = front; i <= rear; i++) 
+
+printf(" %d ", queue[i]); 
+
+printf(" rear");
+
+}
+
+}
+
+
+
+16. Write a program to Create & Display Singly Linked List and Perform 
+
+Insertion and Deletion Operations.
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+#include<alloc.h> 
+
+#include<process.h>
+
+struct node
+
+{
+
+int info;
+
+struct node *next;
+
+};
+
+struct node *start =NULL; 
+
+void create();
+
+void display(); 
+
+void iob(); 
+
+void ioe(); 
+
+void iom(); 
+
+void dob(); 
+
+void dom(); 
+
+void doe();
+
+void main()
+
+{
+
+int ch; 
+
+clrscr();
+
+printf("\n create SLL"); 
+
+create();
+
+while(1)
+
+{
+
+printf("\n 1. Insert at Begin"); 
+
+printf("\n 2. Insert at Middle"); 
+
+printf("\n 3. Insert at End"); 
+
+printf("\n 4. Delete at Begin"); 
+
+printf("\n 5. Delete at Middle"); 
+
+printf("\n 6. Delete at End"); 
+
+printf("\n 7. Display");
+
+printf("\n 8. exit");
+
+printf("\n Enter your choice:"); 
+
+scanf("%d", &ch);
+
+switch(ch)
+
+{
+
+case 1: iob();break;
+
+case 2: iom();break;
+case 3: ioe();break;
+
+case 4: dob();break;
+
+case 5: dob();break;
+
+case 6: dob();break;
+
+case 7: display();break;
+
+case 8: exit(0);
+
+default : printf("\n invalid choice");
+
+}
+
+}
+
+}
+
+void create()
+
+{
+
+struct node *temp,*newn; 
+
+int ele;
+
+char ch;
+
+do
+
+{
+
+printf("\n enter elementto insert:"); 
+
+scanf("%d",&ele);
+newn=(struct node *)malloc(sizeof(struct node)); 
+
+newn-> info= ele;
+
+newn-> next=NULL;
+
+if(start==NULL)
+
+{
+
+start=newn; 
+
+temp= newn;
+
+}
+
+else
+
+{
+
+temp->next=newn; 
+
+temp=newn;
+
+}
+
+printf("\n Do you want to insert another node (Y/N):"); 
+
+scanf("%s",&ch);
+
+}while(ch=='Y');
+
+}
+
+void display()
+
+{
+
+struct node *temp=start; 
+
+if(start==NULL)
+printf("\n empty singly linked list"); 
+
+else
+
+{
+
+printf("\nstart->"); 
+
+while(temp!=NULL)
+
+{
+
+printf("%d->", temp->info); 
+
+temp=temp->next;
+
+}
+
+printf("NULL");
+
+}
+
+}
+
+void iob()
+
+{
+
+struct node *newn; 
+
+int ele;
+
+printf("\n enter elementto insert:"); 
+
+scanf("%d",&ele);
+
+newn=(struct node *)malloc(sizeof(struct node)); 
+
+newn-> info= ele;
+
+newn-> next=start;
+start=newn;
+
+}
+
+void ioe()
+
+{
+
+struct node *newn,*temp=start; 
+
+int ele;
+
+printf("\n enter elementto insert:"); 
+
+scanf("%d",&ele);
+
+newn=(struct node *)malloc(sizeof(struct node)); 
+
+newn-> info= ele;
+
+newn-> next=NULL; 
+
+while(temp->next!=NULL)
+
+{
+
+temp=temp->next;
+
+}
+
+temp->next=newn;
+
+}
+
+void iom()
+
+{
+
+struct node *newn,*temp1=start, *temp2=start->next;
+int ele,key,flag=0;
+
+printf("\n enter key node to insert:"); 
+
+scanf("%d",&key);
+
+while(temp1 !=NULL)
+
+{
+
+if(temp1-> info==key)
+
+{
+
+printf("\n enter element to insert:"); 
+
+scanf("%d",&ele);
+
+newn=(struct node *)malloc(sizeof(struct node)); 
+
+newn-> info= ele;
+
+temp1->next=newn; 
+
+newn->next=temp2; 
+
+flag=1;
+
+break;
+
+}
+
+else
+
+{
+
+temp1=temp1->next; 
+
+temp2=temp2->next;
+
+}
+
+}
+if(flag==0)
+
+printf("\n key element notfound"); 
+
+else
+
+printf("\n key element is inserted successfully");
+
+}
+
+void dob()
+
+{
+
+struct node *temp=start; 
+
+if(start==NULL) 
+
+printf("\n empty SLL"); 
+
+else
+
+{
+
+printf("\n deleted node =%d",temp->info); 
+
+start = temp->next;
+
+free(temp);
+
+}
+
+}
+
+void doe()
+
+{
+
+struct node*temp1=start,*temp2=start->next;
+if(start==NULL) 
+
+printf("\n empty SLL"); 
+
+else
+
+{
+
+while(temp2-> next!=NULL)
+
+{
+
+temp1=temp1->next; 
+
+temp2=temp2->next;
+
+}
+
+printf("\n deleteed node=%d",temp2->info); 
+
+temp1->next=NULL;
+
+free(temp2);
+
+}
+
+}
+
+void dom()
+
+{
+
+struct node *temp1=start,*temp2=start->next; 
+
+int key,flag=0;
+
+if(start==NULL) 
+
+printf("\n empty SLL"); 
+
+else
+{
+
+printf("\n enter key node to delete:"); 
+
+scanf("%d",&key); 
+
+while(temp2!=NULL)
+
+if(key==temp2->info)
+
+{
+
+printf("\n deleted node=%d",temp2->info); 
+
+temp1->next=temp2->next;
+
+free(temp2); 
+
+flag=1; 
+
+break;
+
+}
+
+else
+
+{
+
+temp1=temp1->next; 
+
+temp2=temp2->next;
+
+}
+
+}
+
+if(flag==0)
+
+printf("\n key node not found");
+
+}
+
+
+
+
+17. Write a program to Create binary search tree and apply tree 
+
+traversal technique.
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+#include<process.h> 
+
+#include<alloc.h>
+
+struct node
+
+{
+
+struct node *lchild; 
+
+int info;
+
+struct node *rchild;
+
+};
+
+struct node *root =NULL; 
+
+void create();
+
+void preorder(struct node *temp); 
+
+void inorder(struct node *temp); 
+
+void postorder(struct node *temp); 
+
+void main()
+
+{
+
+int ch; 
+
+clrscr();
+
+while(1)
+
+{
+
+printf("\n 1. Create");
+
+printf("\n 2. Pre-order");
+
+printf("\n 3. Inorder");
+
+printf("\n 4. Post-order");
+
+printf("\n 5. exit");
+
+printf("\n Enter your choice:"); 
+
+scanf("%d", &ch);
+
+switch(ch)
+
+{
+
+case 1: create();break;
+
+case 2: preorder(root);break;
+
+case 3: inorder(root);break;
+
+case 4: postorder(root);break;
+
+case 5: exit(0);
+
+default : printf("\n invalid choice");
+
+}
+
+}
+
+}
+
+void create()
+
+{
+struct node *newn ,*parent,*temp=root; 
+
+int ele;
+
+printf("\n enter elementto insert:"); 
+
+scanf("%d",&ele);
+
+newn=(struct node *)malloc(sizeof(struct node)); 
+
+newn-> info= ele;
+
+newn-> lchild=NULL; 
+
+newn-> rchild=NULL;
+
+if(root==NULL) 
+
+root=newn;
+
+else
+
+{
+
+while(temp!=NULL)
+
+{
+
+parent=temp;
+
+if(newn->info < temp->info) 
+
+temp=temp->lchild;
+
+else
+
+if(newn->info > temp->info) 
+
+temp=temp->rchild;
+
+else 
+
+break;
+}
+
+if(newn->info < parent->info) 
+
+parent->lchild=newn;
+
+else
+
+if(newn->info>parent->info) 
+
+parent->rchild=newn;
+
+else
+
+printf("\n Node is already inserted (search is successful)");
+
+}
+
+}
+
+void preorder(struct node *temp)
+
+{
+
+if (temp!=NULL)
+
+{
+
+printf("%d\n",temp->info); 
+
+preorder(temp->lchild); 
+
+preorder(temp->rchild);
+
+}
+
+}
+
+void inorder(struct node *temp)
+{
+
+if (temp!=NULL)
+
+{
+
+inorder(temp->lchild); 
+
+printf("%d\n",temp->info); 
+
+inorder(temp->rchild);
+
+}
+
+}
+
+void postorder(struct node *temp)
+
+{
+
+if (temp!=NULL)
+
+{
+
+postorder(temp->lchild); 
+
+postorder(temp->rchild); 
+
+printf("%d\n",temp->info);
+
+}
+
+}
+
+18. Write a program to accept cities name and display it in alphabetical 
+
+order.
+
+#include<stdio.h> 
+
+#include<conio.h> 
+
+#include<string.h> 
+
+void main()
+
+{
+
+char city[10][10],temp[10]; 
+
+int n,i,j;
+
+clrscr();
+
+printf("\n Enter number of cities:"); 
+
+scanf("%d",&n);
+
+printf("\n Enter cities name:"); 
+
+for(i=0;i<n;i++)
+
+scanf("%s",city[i]); 
+
+printf("\n\n Before sorting:"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %s",city[i]); 
+
+for(i=0;i<n-1;i++)
+
+{
+
+for(j=i+1;j<n;j++)
+{
+
+if(strcmp(city[i],city[j])>0)
+
+{
+
+strcpy(temp,city[i]); 
+
+strcpy(city[i],city[j]); 
+
+strcpy(city[j],temp);
+
+}
+
+}
+
+}
+
+printf("\n\n After sorting:"); 
+
+for(i=0;i<n;i++)
+
+printf("\n %s",city[i]); 
+
+getch();
+
+}
