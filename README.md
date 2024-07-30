@@ -1,8 +1,8 @@
 1. Write a program to find GCD using recursion ?
 
-#include<stdio.h> 
+#include< stdio.h> 
 
-#include<conio.h> 
+#include< conio.h> 
 
 int gcd(int a,int b); 
 
